@@ -3,21 +3,22 @@ import StartPage from '../components/start/StartPage';
 
 class App extends React.Component{
 
-constructor(){
-    super();
-   
-}
+
 
     render() {
         return(
             <div className="layout-site">
             <StartPage  />
-        
+            {this.props.children}
             </div>
         );
     }
 
 }
+
+App.propTypes= {
+children: PropTypes.object.isRequired
+};
 
 
 

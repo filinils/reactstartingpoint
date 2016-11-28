@@ -1,5 +1,5 @@
 import React from 'react';
-import PageDal from '../../data/PageDal';
+import Datacontext from '../../data/Datacontext';
 import Property from '../property/Property';
 
 
@@ -7,10 +7,10 @@ class StartPage extends React.Component {
 
     constructor() {
         super();
-       
-        this.PageDal = new PageDal();
+
+        this.dc = new Datacontext();
         this.page = null;
-        this.state = {propList:null};
+        this.state = { propList: null };
         this.getPage = this.getPage.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
@@ -25,15 +25,11 @@ class StartPage extends React.Component {
         this.getPage().then(res => {
             const propList = res.data.Property.map(prop => <Property key={prop.Id} name={prop.Name} />);
             this.setState({ propList: propList });
-            
-
         });
-
-
     }
 
     getPage() {
-        return this.PageDal.getPage();
+        return this.dc.getPage();
     }
 
 
@@ -42,7 +38,7 @@ class StartPage extends React.Component {
             <div className="layout-content" >
                 <ul>{this.state.propList}</ul>
                 <button onClick={this.handleClick}>Click me for</button>
-                
+
             </div>
         );
     }

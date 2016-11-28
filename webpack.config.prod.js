@@ -18,7 +18,7 @@ export default {
   entry: path.resolve(__dirname, 'src/index'),
   target: 'web', // necessary per https://webpack.github.io/docs/testing.html#compile-and-test
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname),
     publicPath: '/',
     filename: '[name].[chunkhash].js'
   },
@@ -37,7 +37,8 @@ export default {
 
     // Generate HTML file that contains references to generated bundles. See here for how this works: https://github.com/ampedandwired/html-webpack-plugin#basic-usage
     new HtmlWebpackPlugin({
-      template: 'src/index.ejs',
+        template: 'Views/StartPage/Index.cshtml',
+        filename:'Views/StartPage/Index.cshtml',
       minify: {
         removeComments: true,
         collapseWhitespace: true,

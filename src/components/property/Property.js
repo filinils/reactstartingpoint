@@ -3,19 +3,12 @@ import React from 'react';
 class Property extends React.Component{
     constructor(){
         super();
-            if(inEdit){
-
-        this.prop = <li></li>;
-            }
-            else{
-
-        this.prop = <li edit-mode></li>;
-            }
+            
 
     }
     render(){
         return (
-        <li>{this.props.name}</li>
+       <div data-epi-property-name={this.props.name} data-epi-use-mvc="True">{this.props.value}</div>
         );
     }
 }
