@@ -25,6 +25,6 @@ app.listen(port, function(err) {
   if (err) {
     console.log(err);
   } else {
-    console.log('Hrm is running');
+    console.log('Hmr is running');
   }
 });

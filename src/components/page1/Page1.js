@@ -5,7 +5,7 @@ import {render } from 'react-dom';
 class Page1 extends React.Component{
 
 render(){
-    return <button name="btn">Simple1</button>;
+    return <button name="btn">Btn1</button>;
 }
 }
 

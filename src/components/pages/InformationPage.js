@@ -7,8 +7,8 @@ import Property from '../property/Property';
 
 class InformationPage extends React.Component{
 
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
 
         this.state ={propList:null};
         this.dc = new Datacontext();
@@ -16,7 +16,7 @@ class InformationPage extends React.Component{
     }
 
     getPage(){
-        this.dc.getPage(this.props.route.id).then(res=>{
+        this.dc.getPage().then(res=>{
             const propList = res.data.Property.map((prop,index) => <Property key={index} name={prop.Name} value={prop.Value} />);
 
             this.setState({propList:propList});
